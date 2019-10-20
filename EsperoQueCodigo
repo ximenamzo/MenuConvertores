@@ -131,11 +131,14 @@ int main()
 		{
 		case '1':
 			system("cls");
-			cout << "Has elejido Binario-Decimal. \n";
+			cout << "--------------------------------------------------------------" << endl;
+			cout << "||  H A S   E L E G I D O   B I N A R I O - D E C I M A L.  ||" << endl;
+			cout << "--------------------------------------------------------------" << endl;
+			cout << "||                                                          ||" << endl; // 54 + 8
 			{
 				int exp, digito;
 				double binario, decimal;
-				cout << "Introduce el numero binario: ";
+				cout << "|| Introduce el numero binario:                             ||" << endl;
 				cin >> binario;
 				exp = 0;
 				decimal = 0;
