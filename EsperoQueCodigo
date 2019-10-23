@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include <cmath>
-#include<cstdlib>
+#include <cstdlib>
 #include <iomanip>
 #include <cmath>
 #include <stdio.h>
@@ -125,6 +125,8 @@ int main()
 		cout << LIGHT_YELLOWF << BLUE << "||           mas numeros que '1' y '0' (del 0/1 al 9)''.    ||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "||----------------------------------------------------------||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "||                                                          ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "|| " DEFAULT0 << LIGHT_YELLOWF << RED << "E s t a s   s o n   l a s   o p c i o n e s:" DEFAULT0 << LIGHT_YELLOWF << BLUE << "             ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||                                                          ||" DEFAULT0 << endl;
 		cout << LIGHT_MAGENTAF << WHITE << "||                     \t1.- Binario-Decimal                 ||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "--------------------------------------------------------------" DEFAULT0 << endl;
 		cout << LIGHT_MAGENTAF << WHITE << "||                     \t2.- Decimal-Binario                 ||" DEFAULT0 << endl;
@@ -246,15 +248,15 @@ int main()
 			break;
 		case '4':
 			system("cls");
-			cout << LIGHT_WHITEF << MAGENTA << "||                                                          ||" DEFAULT0 << endl;
-			cout << "|| E L E G I S T E    B I N A R I O - H E X A D E C I M A L ||" << endl; 
-			cout << "||                                                          ||" DEFAULT0 << endl;{
+			cout << LIGHT_WHITEF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << LIGHT_WHITEF << MAGENTA << "|| E L E G I S T E    B I N A R I O - H E X A D E C I M A L ||" << endl;
+			cout << LIGHT_WHITEF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << LIGHT_WHITEF << MAGENTA << "||                                                          ||" DEFAULT0 << endl;{
 
 				char numero[9], temp[2];
 				short potencia[9] = { 1,2,4,8,16,32,64,128 };
 				int i, x, total = 0, decimal[9];
-				cout <<  "||                                                          ||" DEFAULT0 << endl;
-				cout << ("|| Escriba un numero binario:                               ||" DEFAULT0)<< endl;
+				cout << LIGHT_MAGENTAF <<LIGHT_GREEN << ("|| Escriba un numero binario:                               ||" DEFAULT0)<< endl;
 				cin >> ("%s", numero);
 				for (i = 0; numero[i] != '\0'; i++);
 				int limite = i;
@@ -265,9 +267,11 @@ int main()
 					decimal[x] *= potencia[x];
 					total += decimal[x];
 				}
-				cout << "||                                                          ||" DEFAULT0 << endl;
-				printf( "|| El resultado en decimal es: %d", total, "                         ||");
-				printf( "||\n El resultado en hexadecimal: %x", total, "                        ||");
+				cout << LIGHT_MAGENTAF << LIGHT_GREEN << "||                                                          ||" DEFAULT0 << endl;
+				printf(LIGHT_MAGENTAF); printf(LIGHT_GREEN); printf("|| El resultado en decimal es: %d", total); 
+				printf("                           ||\n");
+				printf("|| El resultado en hexadecimal: %x", total);
+				printf("                          ||\n");printf(DEFAULT0);
 			}
 			getwchar();
 			pausa();
@@ -275,15 +279,17 @@ int main()
 
 		case '5':
 			system("cls");
-			cout << "||                                                          ||" DEFAULT0 << endl;
-			cout << "||    H A S   E L E G I D O   T E X T O - B I N A R I O     ||" << endl;
+			cout << LIGHT_CYANF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << LIGHT_CYANF << MAGENTA << "||    H A S   E L E G I D O   T E X T O - B I N A R I O     ||" DEFAULT0 << endl;
+			cout << LIGHT_CYANF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << LIGHT_CYANF << MAGENTA << "||                                                          ||" DEFAULT0 << endl;
+
 
 			{
 				char texto[300];
 				int contador = 0, num, resul, cerosunos[20], i;
 				int clrscr();
-				cout << "||                                                          ||" DEFAULT0 << endl;
-				printf( "|| Introduzca un texto para convertirlo a codigo binario:   ||\n" DEFAULT0);
+				printf(LIGHT_GRAYF); printf(BLACK); printf("|| Introduzca un texto para convertirlo a codigo binario:   ||\n");
 				cin >> (texto);
 				while (contador < strlen(texto))
 				{
@@ -313,10 +319,8 @@ int main()
 					}
 					printf(" ");
 					contador = contador + 1;
+					printf("\n");
 				}
-				getwchar();
-
-				return 0;
 			}
 			pausa();
 			break;
@@ -336,6 +340,7 @@ int main()
 	return 0;
 
 }
+
 //Desarrollamos la función
 void pausa()
 {
