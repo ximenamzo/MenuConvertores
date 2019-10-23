@@ -113,8 +113,17 @@ int main()
 		cin.clear();
 		system("cls");
 		cout << LIGHT_YELLOWF << BLUE << "--------------------------------------------------------------" DEFAULT0 << endl;
-		cout << LIGHT_YELLOWF << BLUE << BLINK_ON << "||                  C O N V E R S I O N E S                 ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << BLINK_ON << "||    P R O G R A M A    D E    C O N V E R S I O N E S     ||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "--------------------------------------------------------------" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||                                                          ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||----------------------------------------------------------||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "|| NOTA: * ''Un numero binario esta compuesto por           ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||           numeros 1's y 0's''.                           ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||                                                          ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||       * ''Cuando el programa marca decimal no significa  ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||           que tenga un punto decimal, si no que tiene    ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||           mas numeros que '1' y '0' (del 0/1 al 9)''.    ||" DEFAULT0 << endl;
+		cout << LIGHT_YELLOWF << BLUE << "||----------------------------------------------------------||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "||                                                          ||" DEFAULT0 << endl;
 		cout << LIGHT_MAGENTAF << WHITE << "||                     \t1.- Binario-Decimal                 ||" DEFAULT0 << endl;
 		cout << LIGHT_YELLOWF << BLUE << "--------------------------------------------------------------" DEFAULT0 << endl;
@@ -161,14 +170,14 @@ int main()
 			break;
 		case '2':
 			system("cls");
-			cout << WHITEF << MAGENTA << "-------------------------------------------------------------" DEFAULT0 << endl;
-			cout << WHITEF << MAGENTA << "||  H A S   E L E G I D O   D E C I M A L - B I N A R I O  ||" DEFAULT0 << endl;
-			cout << WHITEF << MAGENTA << "-------------------------------------------------------------" DEFAULT0 << endl;
-			cout << WHITEF << MAGENTA << "                                                             " DEFAULT0 << endl; //61
+			cout << WHITEF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << WHITEF << MAGENTA << "||  H A S   E L E G I D O   D E C I M A L - B I N A R I O   ||" DEFAULT0 << endl;
+			cout << WHITEF << MAGENTA << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << WHITEF << MAGENTA << "||                                                          ||" DEFAULT0 << endl; //61
 			{
 				int numero, exp, digito;
 				double binario;
-				cout << BLUEF << WHITE << "|| Introduce un numero en decimal:                         ||" DEFAULT0 << endl;
+				cout << GREENF << WHITE << "|| Introduce un numero en decimal:                          ||" DEFAULT0 << endl;
 				cin >> numero;
 				exp = 0;
 				binario = 0;
@@ -181,23 +190,26 @@ int main()
 				}
 				binario = binario + numero * pow(10.0, exp);
 				cout << fixed << setprecision(0);
-				cout << "||---------------------------------------------------------||" << endl;
-				cout << "|| En binario seria: " << binario << "                                ||" << endl;
-				cout << "||---------------------------------------------------------||" << endl;
+				cout << GREENF << WHITE << "||----------------------------------------------------------||" DEFAULT0 << endl;
+				cout << GREENF << WHITE << "|| En binario seria: " << binario << "                                 ||" DEFAULT0 << endl;
+				cout << GREENF << WHITE << "||----------------------------------------------------------||" DEFAULT0 << endl;
 			}
 			pausa();
 			break;
 		case '3':
 			system("cls");
-			cout << "Has elejido Binario-Octal. \n";
+			cout << GREENF << RED << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << GREENF << RED << "||    H A S   E L E G I D O   B I N A R I O - O C T A L     ||" DEFAULT0 << endl;
+			cout << GREENF << RED << "--------------------------------------------------------------" DEFAULT0 << endl;
+			cout << GREENF << RED << "||                                                          ||" DEFAULT0 << endl;
 			{
 				int par; string resus, repu;
 				vector <string> bina;
 				vector <string> resul;
-				cout << "¿Cuantos grupos de 3 digitos tiene tu codigo?: ";
+				cout << REDF << LIGHT_YELLOW << "|| ¿Cuantos grupos de 3 digitos tiene tu codigo?:          ||" DEFAULT0 << endl;
 				cin >> par;
 				for (int i = 0; i < par; i++) {
-					cout << i + 1 << ": " << "Ingresa 3 digitos de tu codigo: ";
+					cout << i + 1 << ": " << REDF << LIGHT_YELLOW << "|| Ingresa 3 digitos (en binario) de tu codigo:          ||" DEFAULT0 << endl;
 					cin >> repu;
 					bina.push_back(repu);
 					if (bina[i] == "000") {
@@ -228,18 +240,21 @@ int main()
 					}
 					resus = resus + resul[i];
 				}
-				cout << " El codigo Octal es: " << resus << endl;
+				cout << REDF << LIGHT_YELLOW << "|| El codigo Octal es:" << resus << "                                   ||" DEFAULT0 << endl;
 			}
 			pausa();
 			break;
 		case '4':
 			system("cls");
-			cout << "Has elejido Binario-Hexadecimal. \n"; {
+			cout << LIGHT_WHITEF << MAGENTA << "||                                                          ||" DEFAULT0 << endl;
+			cout << "|| E L E G I S T E    B I N A R I O - H E X A D E C I M A L ||" << endl; 
+			cout << "||                                                          ||" DEFAULT0 << endl;{
 
 				char numero[9], temp[2];
 				short potencia[9] = { 1,2,4,8,16,32,64,128 };
 				int i, x, total = 0, decimal[9];
-				cout << ("Escriba un numero binario: ");
+				cout <<  "||                                                          ||" DEFAULT0 << endl;
+				cout << ("|| Escriba un numero binario:                               ||" DEFAULT0)<< endl;
 				cin >> ("%s", numero);
 				for (i = 0; numero[i] != '\0'; i++);
 				int limite = i;
@@ -250,21 +265,25 @@ int main()
 					decimal[x] *= potencia[x];
 					total += decimal[x];
 				}
-				printf("resultado en decimal: %d", total);
-				printf("\nresultado en hexadecimal: %x", total);
+				cout << "||                                                          ||" DEFAULT0 << endl;
+				printf( "|| El resultado en decimal es: %d", total, "                         ||");
+				printf( "||\n El resultado en hexadecimal: %x", total, "                        ||");
 			}
 			getwchar();
-			return 0;
+			pausa();
+			break;
 
 		case '5':
 			system("cls");
-			cout << "Has elejido Texto-Binario. \n";
+			cout << "||                                                          ||" DEFAULT0 << endl;
+			cout << "||    H A S   E L E G I D O   T E X T O - B I N A R I O     ||" << endl;
 
 			{
 				char texto[300];
 				int contador = 0, num, resul, cerosunos[20], i;
 				int clrscr();
-				printf("introduzca un texto para convertirlo a codigo binario:\n");
+				cout << "||                                                          ||" DEFAULT0 << endl;
+				printf( "|| Introduzca un texto para convertirlo a codigo binario:   ||\n" DEFAULT0);
 				cin >> (texto);
 				while (contador < strlen(texto))
 				{
